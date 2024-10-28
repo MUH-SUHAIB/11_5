@@ -1,100 +1,156 @@
-body {
-    font-family: 'Times new Roman', sans-serif;         /* Change to a modern font */
-    margin: 0;                                           /* Remove default margin */
-    padding: 0;                                           /* Add padding around the body */
-    background-color: #fafdfd;                               /* Soft background color */
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Times New Roman', sans-serif;
+    background: url('Logo1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
 
+/* Header and Footer Styles */
+header, footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-bottom: 1px solid white;
+}
 
-header {
-    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient from dark blue to dark gray-blue */
-    color: white;                                 /* White text color */
-    padding-left: 23px;                                /* Padding around the header */
-    padding-top: 20px;
-    padding-right: 23px;
-    padding-bottom: 2px;
-    text-align: center;                           /* Center the text */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);   /* Deeper shadow for more depth */
-    border: bottom right radius 15px;                          /* Rounded edges */
-    border: bottom left radius 15px;
-
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 nav {
-    background-color: #34495e;                     /* Dark gray-blue background */
-    text-align: center;                             /* Center the navigation links */
-    border-radius: 15px;                            /* Round edges for a nicer look */
-    border: 1px solid white;                        /* Add border with white color */
-    margin: 10px 0;                                 /* Add margin for spacing */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
 }
 
 nav a {
-    color: white;                                   /* White text color for links */
-    text-decoration: none;                          /* Remove underline from links */
-    padding: 15px 20px;                            /* Padding around links */
-    display: inline-block;                          /* Make links block-like for padding */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: #3b5762;                     /* Change background to teal on hover */
-    color: #ffffff;                                 /* Keep text white on hover */
-    border-radius: 15px;                           /* Maintain rounded edges */
-    border: 1px solid white;                        /* Add border on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);      /* Add shadow on hover for depth */
+    background-color: #3b5762;
+    transform: translateY(-2px);
 }
 
-.welcome {
-    background-color: white;                      /* Background color */
-    padding: 20px;                                /* Padding */
-    margin: 30px;                                 /* Margin */
-    border-radius: 15px;                          /* Border radius */
-    border: 2px solid white;                       /* Border */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);    /* Subtle shadow */
-    color: #333333;                               /* Text color */
+/* Main content wrapper */
+.main-content {
+    max-width: 1200px; /* Set max width for the main content */
+    margin: 0 auto; /* Center the main content */
+    padding: 20px; /* Add padding */
 }
 
-.welcome h2, 
-.welcome p {
-    color: #333333;                               /* Ensure headings and paragraphs have the same color */
+/* Main Content Sections */
+.content-wrapper {
+    max-width: 150%; /* Increase max width for content sections */
+    margin: 10px ; /* Center and space out sections */
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 40px 20px;
+    background-color: rgb(255, 255, 255); /* Background color */
+    border: 2px solid #e1e8ed; /* Border for the inner layer */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.features {
-    background-color: #f5f5f5;
-    padding: 30px;                /* Added px unit */
-    margin: 30px;                 /* Added px unit */
-    border-radius: 15px;          /* Added px unit */
-    border: 2px solid white;       /* Specified width, style, and color */
+.content-wrapper:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
-.feature-item{
-    background-color: white;
-    padding: 15px;
-    margin: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+.reverse {
+    flex-direction: row-reverse; /* Reverse the order of content */
 }
-.feature-item h4{
+
+.text-content {
+    flex: 2; /* Text takes up more space */
+}
+
+.image-content {
+    flex: 1; /* Image takes up less space */
+}
+
+.image-content img {
+    width: 100%; /* Make images responsive */
+    max-width: 400px; /* Limit image size */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+/* Headings and Paragraphs */
+h2, h3 {
+    color: #2c3e50; /* Heading color */
+    margin-bottom: 20px; /* Space below headings */
+}
+
+h2 {
+    font-size: 2.5rem; /* Size for H2 */
+}
+
+h3 {
+    font-size: 2rem; /* Size for H3 */
+}
+
+p {
+    margin-bottom: 20px; /* Space below paragraphs */
+    font-size: 1.1rem; /* Font size for paragraphs */
+}
+
+/* Learn More Link */
+.learn-more {
+    display: inline-block;
     color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: all 0.3s ease;
 }
 
-
-
-
-
-.about {
-    background-color: #ffffff;
-    color: #333333;
-    padding: 30px;                /* Added px unit */
-    margin: 30px;                 /* Added px unit */
-    border-radius: 15px;          /* Added px unit */
-    border: 2px solid white;       /* Specified width, style, and color */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.learn-more:hover {
+    color: #3498db;
+    transform: translateX(10px); /* Slight movement on hover */
 }
 
+/* Footer Styles */
 footer {
-    background-color: #34495e; /* Dark gray-blue background */
-    color: white;              /* White text color */
-    text-align: center;        /* Center the text */
-    padding: 20px;             /* Padding */
+    text-align: center;
+    margin-top: 20px; /* Space above footer */
+    border-top: 1px solid white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column; /* Stack content on smaller screens */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: 1.75rem; /* Adjust heading size */
+    }
 }
