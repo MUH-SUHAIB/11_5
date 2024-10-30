@@ -10,8 +10,59 @@
       </head>
        
       <body>
-           <h1>Investments page<h1>
+    <header>
+        <div class="header-container">
+            <h1>Investor Deal Management</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <div class="dropdown">
+                <a href="Investor.html">Investments Management</a>
+                <div class="dropdown-content">
+                    <a href="#addInvestor">Add/Edit Investor</a>
+                    <a href="#investorsOverview">Investors Overview</a>
+                    <a href="#investorSummary">Investor Summary</a>
+                </div>
+            </div>
+            <a href="Deals.html">Deals Management</a>
+            <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
+            <a href="Reports.html">Comprehensive Final Reports</a>
+            <a href="Support.html">Support & Feedback</a>
+        </nav>
+    </header>
 
-      </body>
+    <main>
+        <section id="addInvestor">
+            <h2>Add/Edit Investor</h2>
+            <input type="text" id="investorName" placeholder="Investor Name">
+            <input type="number" id="investmentAmount" placeholder="Investment Amount">
+            <select id="dealType">
+                <option value="">Select Deal Type</option>
+                <option value="cars">Cars</option>
+                <option value="realEstate">Real Estate</option>
+                <option value="technology">Technology</option>
+            </select>
+            <button onclick="addInvestor()">Add/Update Investor</button>
+        </section>
+
+        <section id="investorsOverview">
+            <h2>Investors Overview</h2>
+            <!-- Investors will be listed here -->
+        </section>
+
+        <section id="investorSummary">
+            <h2>Investment Summary</h2>
+            <p>Total Investors: <span id="totalInvestors">0</span></p>
+            <p>Total Investment: $<span id="totalInvestment">0.00</span></p>
+            <p>Average Investment: $<span id="averageInvestment">0.00</span></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Investor Deal Management. All rights reserved.</p>
+    </footer>
+
+    <script src="Investor.js"></script>
+</body>
 
 </html>
