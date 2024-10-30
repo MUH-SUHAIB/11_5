@@ -1,0 +1,125 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://github.com/MUH-SUHAIB/11_5/blob/66d3d6d1a6f27a8d9f818ca0adf2ddfb2d659751/Logo1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Header and Footer Styles */
+header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensure vertical alignment */
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    position: relative; /* Ensures dropdown is positioned relative to the nav */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: flex; /* Make anchor tags flex containers */
+    align-items: center; /* Center align content */
+}
+
+nav a:hover {
+    background-color: #3b5762;
+    transform: translateY(-2px);
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative; /* Set relative positioning for dropdown */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #34495e;
+    width: 100%; /* Make it occupy the full width of the parent */
+    min-width: 200px; /* Ensure a minimum width */
+    border-radius: 5px; /* Add rounded corners */
+    z-index: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #3b5762;
+}
+
+/* Section Styles */
+section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    max-width: 800px;
+}
+
+/* Investor List Styles */
+.investor-item {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.deal-details {
+    margin-top: 5px;
+    padding: 5px;
+    border-left: 3px solid #4CAF50;
+    padding-left: 10px;
+    display: none; /* Initially hidden */
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
