@@ -15,11 +15,13 @@ body {
 }
 
 /* Header and Footer Styles */
-header {
+header,footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-bottom: 1px solid white;
 }
 
 .header-container {
@@ -113,13 +115,8 @@ section {
     display: none; /* Initially hidden */
 }
 
-/* Footer Styles */
-footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
+
+
+
+
+
