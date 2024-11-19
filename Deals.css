@@ -13,7 +13,7 @@ body {
     min-height: 100vh;
 }
 
-/* Header and Footer Styles */
+
 header, footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
@@ -50,4 +50,69 @@ nav a {
 nav a:hover {
     background-color: #3b5762;
     transform: translateY(-2px);
+}
+
+/* Deal List and Actions */
+.deal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.add-deal-btn {
+    padding: 10px 20px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.add-deal-btn:hover {
+    background-color: #34495e;
+}
+
+#deal-search {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.filters select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+
+.deal-list table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.deal-list th, .deal-list td {
+    padding: 12px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.deal-list th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.deal-list tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+.deal-list tr:hover {
+    background-color: #f1f1f1;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
 }
