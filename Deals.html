@@ -1,43 +1,65 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDM - Deals</title>
+    <link rel="stylesheet" href="Deals.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Investor Deal Management</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Investor.html">Investments Management</a>
+            <a href="Deals.html">Deals Management</a>
+            <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
+            <a href="Reports.html">Comprehensive Final Reports</a>
+            <a href="Support.html">Support & Feedback</a>
+        </nav>
+    </header>
 
-<html>
-      <head>
+    <h1>Deals Management</h1>
 
-          <meta charset = "utf-8">
-          <title>IDM - Deals</title>
-          <link rel = "stylesheet" href = "Deal.css" >   
+    <section class="deal-actions">
+        <button class="add-deal-btn">Add New Deal</button>
+        <input type="text" id="deal-search" placeholder="Search Deals...">
+        <div class="filters">
+            <select id="deal-status">
+                <option value="">Filter by Status</option>
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Closed">Closed</option>
+                <option value="On Hold">On Hold</option>
+            </select>
+        </div>
+    </section>
 
-      </head>
-       
-      <body>
-            
-          <header>
-                <div class="header-container">
-                    <h1>Investor Deal Management</h1>
-                </div>
-              <nav>
-                <a href="index.html">Home</a>
-                <a href="Investor.html">Investments Management</a>
-                <a href="Deals.html">Deals Management</a>
-                <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
-                <a href="Reports.html">Comprehensive Final Reports</a>
-                 <a href="Support.html">Support & Feedback</a>
-              </nav>
-           </header>
+    <section class="deal-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Deal Name</th>
+                    <th>Client Name</th>
+                    <th>Investor Names</th>
+                    <th>Deal Type</th>
+                    <th>Status</th>
+                    <th>Total Invested Amount</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </section>
 
-            <h1>Deals management</h1>
+    <footer>
+        <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+    </footer>
 
-
-
-
-
-
-
-            <footer>
-            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-        </footer>
-
-
-      </body>
-
+    <script src="Deals.js"></script>
+</body>
 </html>
