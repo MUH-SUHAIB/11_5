@@ -6,12 +6,10 @@ function searchFAQ() {
     let hasResults = false;
 
     faqItems.forEach(item => {
-        const question = item.querySelector('h3')?.textContent?.toLowerCase() || '';
-        const answer = item.querySelector('p')?.textContent?.toLowerCase() || '';
+        const question = item.querySelector('h3').textContent.toLowerCase();
+        const answer = item.querySelector('p').textContent.toLowerCase();
 
         if (question.includes(searchInput) || answer.includes(searchInput)) {
-            item.querySelector('h3').innerHTML = highlightMatch(question, searchInput);
-            item.querySelector('p').innerHTML = highlightMatch(answer, searchInput);
             item.style.display = 'block';
             hasResults = true;
         } else {
