@@ -1,5 +1,5 @@
 function searchFAQ() {
-    const searchInput = document.getElementById('search-input').value.toLowerCase();
+    const searchInput = document.getElementById('search-input').value.trim().toLowerCase();
     const faqItems = document.querySelectorAll('.faq-item');
     const noResultsMessage = document.getElementById('no-results-message');
 
