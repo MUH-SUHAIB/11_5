@@ -28,17 +28,40 @@
         <h1>Support & Feedback</h1>
 
         <!-- FAQ Section -->
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div>
-                <strong>Q: Is this website for investors?</strong>
-                <p>A: No, it is only for dealers to manage investors' deals solely.</p>
-            </div>
-            <div>
-                <strong>Q: I forgot my password. What should I do?</strong>
-                <p>A: Click on the "Forgot Password" link on the login page and follow the instructions.</p>
-            </div>
-        </section>
+      <section class="faq">
+          <h2>Frequently Asked Questions</h2>
+          
+          <!-- Search Bar -->
+          <form id="faq-search-form" onsubmit="searchFAQ(event)">
+              <label for="search-input">Search FAQs:</label>
+              <input type="text" id="search-input" placeholder="Type your question...">
+              <button type="submit">Search</button>
+          </form>
+      
+          <!-- FAQ List -->
+          <div id="faq-list">
+              <div class="faq-item" data-question="Is this website for investors?">
+                  <strong>Q: Is this website for investors?</strong>
+                  <p>A: No, it is only for dealers to manage investors' deals solely.</p>
+              </div>
+              <div class="faq-item" data-question="I forgot my password. What should I do?">
+                  <strong>Q: I forgot my password. What should I do?</strong>
+                  <p>A: Click on the "Forgot Password" link on the login page and follow the instructions.</p>
+              </div>
+              <div class="faq-item" data-question="How do I submit a deal?">
+                  <strong>Q: How do I submit a deal?</strong>
+                  <p>A: Go to the "Deals Management" section and follow the instructions.</p>
+              </div>
+              <div class="faq-item" data-question="What should I do if the website isn't loading properly?">
+                  <strong>Q: What should I do if the website isn't loading properly?</strong>
+                  <p>A: Clear your browser's cache and refresh the page.</p>
+              </div>
+          </div>
+      
+          <!-- No Results Message -->
+          <p id="no-results-message" style="display: none;">No results found. Try another query.</p>
+      </section>
+
 
         <!-- Contact Form -->
         <section class="contact-form">
