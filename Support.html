@@ -24,7 +24,85 @@
                  <a href="Support.html">Support & Feedback</a>
               </nav>
            </header>
-           <h1>Support & IT page<h1>
+      <main>
+        <h1>Support & Feedback</h1>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div>
+                <strong>Q: Is this website for investors?</strong>
+                <p>A: No, it is only for dealers to manage investors' deals solely.</p>
+            </div>
+            <div>
+                <strong>Q: I forgot my password. What should I do?</strong>
+                <p>A: Click on the "Forgot Password" link on the login page and follow the instructions.</p>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="submitFeedback.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message/Issue:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Troubleshooting Tips -->
+        <section class="troubleshooting">
+            <h2>Troubleshooting Tips</h2>
+            <ul>
+                <li>If you forgot your password, use the "Forgot Password" link to reset it.</li>
+                <li>Ensure all fields are filled when submitting a deal.</li>
+                <li>Clear your browser cache if the website isn’t loading properly.</li>
+            </ul>
+        </section>
+
+        <!-- Support Hours -->
+        <section class="support-hours">
+            <h2>Support Hours</h2>
+            <p>We are available Monday to Friday, 9 AM - 5 PM (EST).</p>
+        </section>
+
+        <!-- Feedback Section -->
+        <section class="feedback-section">
+            <h2>Feedback</h2>
+            <form action="submitRating.php" method="POST">
+                <p>Rate your experience:</p>
+                <div class="rating">
+                    <label>
+                        <input type="radio" name="rating" value="1"> 1
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="2"> 2
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="3"> 3
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="4"> 4
+                    </label>
+                    <label>
+                        <input type="radio" name="rating" value="5"> 5
+                    </label>
+                </div>
+
+                <label for="feedback">How can we improve?</label>
+                <textarea id="feedback" name="feedback" rows="3"></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+      </main>
 
 
             <footer>
