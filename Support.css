@@ -7,7 +7,7 @@
 body {
     font-family: 'Times New Roman', sans-serif;
     background: url('https://github.com/MUH-SUHAIB/11_5/blob/e145189c3fa4f256fb971ecdf5b5f2822959480a/Logo1.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background-size: cover; 
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -54,127 +54,127 @@ nav a:hover {
 
 /* Main Content */
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 800px; /* Sets the maximum width of the content */
+    margin: 20px auto; /* Centers the main content */
+    padding: 20px; /* Adds padding inside the content area */
+    background: white; /* Sets a white background */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Adds space between sections */
 }
 
 section h2 {
-    color: #2c3e50;
-    margin-bottom: 10px;
+    color: #2c3e50; /* Sets the heading color */
+    margin-bottom: 10px; /* Adds space below the heading */
 }
 
 form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
+    display: block;  /* Ensures labels take up the full width */
+    margin-top: 10px; /* Adds spacing above the label */
+    font-weight: bold; /* Makes the label text bold */
 }
 
 form input, form textarea, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 100%; /* Makes inputs, textareas, and buttons full-width */
+    padding: 10px; /* Adds padding inside */
+    margin-top: 5px; /* Adds spacing above */
+    border: 1px solid #ccc; /* Adds a light border */
+    border-radius: 5px; /* Rounds the corners */
 }
 
 button {
-    background: #2c3e50;
-    color: white;
-    border: none;
-    cursor: pointer;
+    background: #2c3e50; /* Sets the button background color */
+    color: white; /* Sets the button text color */
+    border: none; /* Removes the border */
+    cursor: pointer; /* Changes the cursor to a pointer */
 }
 
 button:hover {
-    background: #34495e;
+    background: #34495e; /* Changes the button background color on hover */
 }
 
 /* Rating Section */
 .rating {
-    display: flex;
-    gap: 10px;
-    margin: 10px 0;
+    display: flex; /* Aligns rating options horizontally */
+    gap: 10px; /* Adds spacing between rating options */
+    margin: 10px 0; /* Adds spacing above and below the rating section */
 }
 
 .rating label {
-    display: flex;
-    align-items: center;
+    display: flex; /* Aligns content within labels horizontally */
+    align-items: center; /* Vertically centers content */
 }
 
 /* General FAQ Styles */
 .faq {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Centers the FAQ section */
+    max-width: 800px; /* Sets a maximum width */
+    padding: 20px; /* Adds padding inside the section */
+    background-color: #fff; /* Sets a white background */
+    border-radius: 8px; /* Rounds the corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 .faq h1 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 10px;
+    text-align: center; /* Centers the FAQ title */
+    color: #2c3e50; /* Sets the title color */
+    margin-bottom: 10px; /* Adds space below the title */
 }
 
 .faq h2 {
-    text-align: center;
-    color: #34495e;
-    margin-bottom: 20px;
+    text-align: center; /* Centers the FAQ subtitle */
+    color: #34495e; /* Sets the subtitle color */
+    margin-bottom: 20px; /* Adds space below the subtitle */
 }
 
 /* Search Bar */
 .faq-search {
-    margin: 0 auto 20px;
-    text-align: center;
+    margin: 0 auto 20px; /* Centers the search bar */
+    text-align: center; /* Centers the content */
 }
 
 .faq-search input {
-    width: 100%;
-    max-width: 600px;
-    padding: 10px 15px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Makes the search bar full-width */
+    max-width: 600px; /* Sets a maximum width */
+    padding: 10px 15px; /* Adds padding inside the search bar */
+    font-size: 1rem; /* Sets the font size */
+    border: 1px solid #ccc; /* Adds a light border */
+    border-radius: 25px; /* Rounds the corners of the search bar */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
 }
 
 /* FAQ List */
 .faq-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    transition: box-shadow 0.3s ease;
+    margin-bottom: 20px;  /* Adds space between FAQ items */
+    padding: 15px; /* Adds padding inside each item */
+    border: 1px solid #e0e0e0; /* Adds a light border */
+    border-radius: 8px; /* Rounds the corners */
+    transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .faq-item h3 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-    color: #2c3e50;
+    margin: 0 0 10px; /* Removes top margin and adds space below the heading */
+    font-size: 1.2rem;  /* Sets the heading font size */
+    color: #2c3e50; /* Sets the heading color */
 }
 
 .faq-item p {
-    margin: 0;
-    font-size: 1rem;
-    color: #555;
+    margin: 0; /* Removes margin */
+    font-size: 1rem; /* Sets the paragraph font size */
+    color: #555; /* Sets the paragraph text color */
 }
 
 .faq-item:hover {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
 }
 
         /* No Results Message */
 #no-results-message {
-    text-align: center;
-    color: #e74c3c;
-    font-size: 1rem;
-    margin-top: 20px;
+    text-align: center; /* Centers the message */
+    color: #e74c3c; /* Sets the message color to red */
+    font-size: 1rem; /* Sets the font size */
+    margin-top: 20px; /* Adds space above the message */
 }
