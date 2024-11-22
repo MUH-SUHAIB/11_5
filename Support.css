@@ -107,3 +107,33 @@ button:hover {
     display: flex;
     align-items: center;
 }
+
+/* FAQ Section */
+.faq {
+    margin-bottom: 30px;
+}
+
+.faq h2 {
+    margin-bottom: 15px;
+}
+
+#faq-search-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#faq-list .faq-item {
+    margin-bottom: 15px;
+}
+
+#faq-list .faq-item p {
+    margin-left: 20px;
+}
