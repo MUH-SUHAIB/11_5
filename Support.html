@@ -30,18 +30,33 @@
       <!-- FAQ Section -->
         <section class="faq">
             <h2>Frequently Asked Questions</h2>
-            <div class="question">
-                <strong>Q: Is this website for investors?</strong>
-                <p>A: No, it is only for dealers to manage investors' deals solely.</p>
+                        <!-- Search Bar -->
+            <div class="faq-search">
+                <input type="text" id="search-input" placeholder="Search for a question..." oninput="searchFAQ()">
             </div>
-            <div class="question">
-                <strong>Q: I forgot my password. What should I do?</strong>
-                <p>A: Use the "Forgot Password" link on the login page to reset it.</p>
+
+            <!-- FAQ List -->
+            <div id="faq-list">
+                <div class="faq-item">
+                    <h3>Is this website for investors?</h3>
+                    <p>No, it is only for dealers to manage investors' deals solely.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>I forgot my password. What should I do?</h3>
+                    <p>Click on the "Forgot Password" link on the login page and follow the instructions.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How do I submit a deal?</h3>
+                    <p>Go to the "Deals Management" section and follow the instructions.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What should I do if the website isn't loading properly?</h3>
+                    <p>Clear your browser's cache and refresh the page.</p>
+                </div>
             </div>
-            <div class="question">
-                <strong>Q: How do I submit a deal?</strong>
-                <p>A: Go to the "Deals Management" section and follow the instructions.</p>
-            </div>
+
+            <!-- No Results Message -->
+            <p id="no-results-message" style="display: none;">No results found. Try searching for something else.</p>
         </section>
 
 
@@ -75,7 +90,7 @@
         <!-- Support Hours -->
         <section class="support-hours">
             <h2>Support Hours</h2>
-            <p>We are available Monday to Friday, 9 AM - 5 PM (EST).</p>
+            <p>We are available Monday to Friday, 9 AM - 5 PM. </p>
         </section>
 
         <!-- Feedback Section -->
