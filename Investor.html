@@ -6,6 +6,7 @@
           <meta charset = "utf-8">
           <title>IDM - Invesments</title>
           <link rel = "stylesheet" href = "Investor.css" >   
+          <script src="Investor.js"></script>
 
       </head>
        
@@ -31,38 +32,62 @@
         </nav>
     </header>
 
-    <main>
-        <section id="addInvestor">
-            <h2>Add/Edit Investor</h2>
-            <input type="text" id="investorName" placeholder="Investor Name">
+    <section id="addInvestor">
+        <h2 align = "center">Add Investor</h2>
+        <p>Please fill in the details below to add or edit an investor.</p>
+        <div class="input-group">
+            <label for="investorName">Investor Name:</label>
+            <input type="text" id="investorName" placeholder="Investor's Full Name">
+        </div>
+        <div class="input-group">
+            <label for="investmentAmount">Investment Amount:</label>
             <input type="number" id="investmentAmount" placeholder="Investment Amount">
+        </div>
+        <div class="input-group">
+            <label for="dealType">Deal Type:</label>
             <select id="dealType">
-                <option value="">Select Deal Type</option>
+                <option value= "select">Select Deal Type</option>
                 <option value="cars">Cars</option>
                 <option value="realEstate">Real Estate</option>
                 <option value="technology">Technology</option>
             </select>
-            <button onclick="addInvestor()">Add/Update Investor</button>
-        </section>
+        </div>
+        <button onclick="addInvestor()" style="display: block; margin: 20px auto;">Add Investor</button> <!-- center the button--> 
+    </section>
 
-        <section id="investorsOverview">
-            <h2>Investors Overview</h2>
-            <!-- Investors will be listed here -->
-        </section>
+    <section id="investorsOverview">
+        <h2 align="center">Investors Overview</h2>
+        <p>This section provides a comprehensive overview of all investors currently in the system.</p>
+        <table id="investorsTable" class="investors-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Invested Amount</th>
+                    <th>Deal Type</th>
+                    <th>Edit/Remove</th> 
+                </tr>
+            </thead>
+            <tbody id="investorsList">
+                <!-- Investor rows will be dynamically inserted here -->
+            </tbody>
+        </table>
+    </section>
 
-        <section id="investorSummary">
-            <h2>Investment Summary</h2>
-            <p>Total Investors: <span id="totalInvestors">0</span></p>
-            <p>Total Investment: $<span id="totalInvestment">0.00</span></p>
-            <p>Average Investment: $<span id="averageInvestment">0.00</span></p>
-        </section>
-    </main>
+
+    <section id="investorSummary">
+        <h2 align = "center">Investment Summary</h2>
+        <p>Below is a summary of the total number of investors and their investments:</p>
+        <p>Total Investors: <span id="totalInvestors">0</span></p>
+        <p>Total Investment: $<span id="totalInvestment">0.00</span></p>
+        <p>Average Investment: $<span id="averageInvestment">0.00</span></p>
+    </section>
+    
 
     <footer>
-        <p>&copy; 2024 Investor Deal Management. All rights reserved.</p>
+        <p align="center">&copy; 2024 Investor Deal Management. All rights reserved.</p>
     </footer>
 
-    <script src="Investor.js"></script>
+    
 </body>
 
 </html>
