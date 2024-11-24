@@ -13,9 +13,6 @@ function addInvestor() {
         return;
     }
 
-    // Create a unique ID for the investor
-    const investorId = 'inv-' + Date.now(); // Using timestamp for unique ID
-
     // Check if the investor already exists
     let existingInvestor = investors.find(investor => investor.name === investorName);
     if (existingInvestor) {
@@ -23,7 +20,7 @@ function addInvestor() {
         existingInvestor.investments.push({ amount: investmentAmount, type: dealType });
     } else {
         // Add new investor with initial investment
-        investors.push({ id: investorId, name: investorName, investments: [{ amount: investmentAmount, type: dealType }] });
+        investors.push({ name: investorName, investments: [{ amount: investmentAmount, type: dealType }] });
     }
 
     // Save updated investors array to localStorage
@@ -59,8 +56,8 @@ function updateInvestorsList() {
                 <td class="invested-amount"><strong>${investment.amount.toFixed(2)} &nbsp;$</strong></td> 
                 <td class="deal-type"><strong>${investment.type}</strong></td> 
                 <td class="actions"> 
-                    <button onclick="editInvestor('${investor.id}')">Edit</button>
-                    <button onclick="removeInvestor('${investor.id}')">Remove</button>
+                    <button onclick="editInvestor('${investor.name}')">Edit</button>
+                    <button onclick="removeInvestor('${investor.name}')">Remove</button>
                 </td>
             `;
             investorsList.appendChild(row);
@@ -72,8 +69,8 @@ function updateInvestorsList() {
 }
 
 // Function to edit an investor
-function editInvestor(id) {
-    const investor = investors.find(inv => inv.id === id);
+function editInvestor(name) {
+    const investor = investors.find(inv => inv.name === name);
     if (investor) {
         // Populate the form with existing investor data
         document.getElementById('investorName').value = investor.name;
@@ -82,13 +79,13 @@ function editInvestor(id) {
         document.getElementById('dealType').value = lastInvestment.type;
 
         // Remove the investor from the array (to be re-added)
-        removeInvestor(id);
+        removeInvestor(name);
     }
 }
 
 // Function to remove an investor
-function removeInvestor(id) {
-    investors = investors.filter(investor => investor.id !== id);
+function removeInvestor(name) {
+    investors = investors.filter(investor => investor.name !== name);
     localStorage.setItem('investors', JSON.stringify(investors));
     updateInvestorsList();
 }
