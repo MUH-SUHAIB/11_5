@@ -6,8 +6,8 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: url('https://github.com/MUH-SUHAIB/11_5/blob/66d3d6d1a6f27a8d9f818ca0adf2ddfb2d659751/Logo1.jpg') no-repeat center center fixed;
+    font-family: 'Times New Roman', sans-serif;
+    background: url('Logo1.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     line-height: 1.6;
@@ -15,7 +15,7 @@ body {
 }
 
 /* Header and Footer Styles */
-header,footer {
+header, footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     padding: 20px 0;
@@ -35,11 +35,10 @@ header,footer {
 nav {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ensure vertical alignment */
+    align-items: center;
     flex-wrap: wrap;
     gap: 10px;
     padding: 20px;
-    position: relative; /* Ensures dropdown is positioned relative to the nav */
 }
 
 nav a {
@@ -48,8 +47,6 @@ nav a {
     padding: 10px 20px;
     border-radius: 5px;
     transition: all 0.3s ease;
-    display: flex; /* Make anchor tags flex containers */
-    align-items: center; /* Center align content */
 }
 
 nav a:hover {
@@ -59,16 +56,16 @@ nav a:hover {
 
 /* Dropdown Styles */
 .dropdown {
-    position: relative; /* Set relative positioning for dropdown */
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #34495e;
-    width: 100%; /* Make it occupy the full width of the parent */
-    min-width: 200px; /* Ensure a minimum width */
-    border-radius: 5px; /* Add rounded corners */
+    width: 100%;
+    min-width: 200px;
+    border-radius: 5px;
     z-index: 1;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -90,33 +87,156 @@ nav a:hover {
 
 /* Section Styles */
 section {
-    background-color: #f9f9f9;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    border: 2px solid #e1e8ed;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Investor List Styles */
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Investors Overview Styles */
+.investors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
 .investor-item {
-    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 300px;
+}
+
+.investor-item h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.investor-item table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.investor-item th, .investor-item td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.investor-item th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Input Group Styles */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 5px;
-    background-color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
 }
 
-.deal-details {
-    margin-top: 5px;
-    padding: 5px;
-    border-left: 3px solid #4CAF50;
-    padding-left: 10px;
-    display: none; /* Initially hidden */
+.input-group input:focus,
+.input-group select:focus {
+    border-color: #3498db; /* Change border color on focus */
+    outline: none;
 }
 
+.input-group input:hover,
+.input-group select:hover {
+    border-color: #2980b9; /* Darken border on hover */
+}
 
+/* Button Styling */
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
 
+button:hover {
+    background-color: #3b5762;
+    transform: translateY(-2px);
+}
+.investors-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px; /* Retain border-radius */
+    overflow: hidden; /* Ensures the border-radius is respected */
+}
 
+.investors-table th, .investors-table td {
+    padding: 8px; /* Reduced padding for smaller row height */
+    border: 1px solid #ddd;
+}
 
+.investors-table th {
+    background-color: #2c3e50;
+    color: white;
+}
 
+.investors-table td {
+    background-color: white;
+}
+
+/* Make the names, amounts, and deal types bold */
+.investors-table td.name,
+.investors-table td.invested-amount,
+.investors-table td.deal-type {
+    font-weight: bold; /* Bold text for names, amounts, and deal types */
+}
+
+/* Center align invested amount, deal type, and buttons */
+.investors-table td.invested-amount,
+.investors-table td.deal-type,
+.investors-table td.actions {
+    text-align: center; /* Centered text */
+}
+
+/* Style for the button container */
+.investors-table td.actions {
+    display: flex;
+    justify-content: center; /* Center the buttons */
+    gap: 10px; /* Space between buttons */
+}
+
+.investors-table tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+/* Optional: Remove border from last row */
+.investors-table tr:last-child td {
+    border-bottom: none;
+}
