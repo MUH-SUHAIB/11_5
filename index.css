@@ -156,12 +156,28 @@ p {
     text-decoration: none;
     font-weight: bold;
     padding: 10px 0;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for color and movement */
+    opacity: 0; /* Start with the link hidden */
+    transform: translateY(10px); /* Slightly move down initially */
+    animation: fadeInUp 0.5s forwards; /* Animation for initial fade-in */
 }
 
+/* Animation keyframes for fade-in effect */
+@keyframes fadeInUp {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(10px); /* Start slightly down */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* Hover effect */
 .learn-more:hover {
-    color: #3498db;
-    transform: translateX(10px); /* Slight movement on hover */
+    color: #3498db; /* Change color on hover */
+    transform: translateX(10px); /* Slight movement to the right on hover */
 }
 
 /* Footer Styles */
