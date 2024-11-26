@@ -6,7 +6,7 @@
           <meta charset = "utf-8">
           <title>IDM - Invesments</title>
           <link rel = "stylesheet" href = "Investor.css" >   
-          <script src="Investor.js"></script>
+    
 
       </head>
        
@@ -33,26 +33,26 @@
     </header>
 
     <section id="addInvestor">
-        <h2 align = "center">Add Investor</h2>
+        <h2 align="center">Add Investor</h2>
         <p>Please fill in the details below to add or edit an investor.</p>
         <div class="input-group">
             <label for="investorName">Investor Name:</label>
-            <input type="text" id="investorName" placeholder="Investor's Full Name">
+            <input type="text" id="investorName" placeholder="Investor's Full Name" required>
         </div>
         <div class="input-group">
             <label for="investmentAmount">Investment Amount:</label>
-            <input type="number" id="investmentAmount" placeholder="Investment Amount">
+            <input type="number" id="investmentAmount" placeholder="Investment Amount" required>
         </div>
         <div class="input-group">
             <label for="dealType">Deal Type:</label>
-            <select id="dealType">
-                <option value= "select">Select Deal Type</option>
+            <select id="dealType" required>
+                <option value="select">Select Deal Type</option>
                 <option value="cars">Cars</option>
                 <option value="realEstate">Real Estate</option>
                 <option value="technology">Technology</option>
             </select>
         </div>
-        <button onclick="addInvestor()" style="display: block; margin: 20px auto;">Add Investor</button> <!-- center the button--> 
+        <button id="addInvestorButton" style="display: block; margin: 20px auto;">Add Investor</button>
     </section>
 
     <section id="investorsOverview">
@@ -73,20 +73,21 @@
         </table>
     </section>
 
-
     <section id="investorSummary">
-        <h2 align = "center">Investment Summary</h2>
+        <h2 align="center">Investment Summary</h2>
         <p>Below is a summary of the total number of investors and their investments:</p>
         <p>Total Investors: <span id="totalInvestors">0</span></p>
-        <p>Total Investment: $<span id="totalInvestment">0.00</span></p>
-        <p>Average Investment: $<span id="averageInvestment">0.00</span></p>
+        <p>Total Investment: <span id="totalInvestment">0.00</span> $</p>
+        <p>Average Investment: <span id="averageInvestment">0.00</span> $</p>
     </section>
+
     
 
     <footer>
         <p align="center">&copy; 2024 Investor Deal Management. All rights reserved.</p>
     </footer>
 
+    <script src="Investor.js"></script>
     
 </body>
 
