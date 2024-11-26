@@ -1,61 +1,62 @@
-// Initialize investors from localStorage or start with an empty array
-let investors = JSON.parse(localStorage.getItem('investors')) || [];
+let investors = [];
 
-// Function to add an investor
-function addInvestor() {
+// Add or update an investor
+document.getElementById('addInvestorButton').addEventListener('click', () => {
     const investorName = document.getElementById('investorName').value;
     const investmentAmount = parseFloat(document.getElementById('investmentAmount').value);
     const dealType = document.getElementById('dealType').value;
 
-    // Simple validation
+    // Validate inputs
     if (!investorName || isNaN(investmentAmount) || dealType === "select") {
         alert('Please fill out all fields correctly.');
         return;
     }
 
-    // Check if the investor already exists
-    let existingInvestor = investors.find(investor => investor.name === investorName);
+    // Find existing investor
+    const existingInvestor = investors.find(inv => inv.name === investorName);
     if (existingInvestor) {
-        // Update existing investor's investment
+        // Update investment
         existingInvestor.investments.push({ amount: investmentAmount, type: dealType });
     } else {
-        // Add new investor with initial investment
+        // Add new investor
         investors.push({ name: investorName, investments: [{ amount: investmentAmount, type: dealType }] });
     }
 
-    // Save updated investors array to localStorage
-    localStorage.setItem('investors', JSON.stringify(investors));
-    
     // Clear form and update UI
     clearForm();
     updateInvestorsList();
-}
+    updateInvestmentSummary();
+});
 
-// Function to clear the input form
+// Clear all investors
+document.getElementById('clearButton').addEventListener('click', () => {
+    if (confirm("Are you sure you want to clear all investors?")) {
+        investors = [];
+        updateInvestorsList();
+        updateInvestmentSummary();
+    }
+});
+
+// Clear form inputs
 function clearForm() {
     document.getElementById('investorName').value = '';
     document.getElementById('investmentAmount').value = '';
-    document.getElementById('dealType').value = 'select'; // Reset to default option
+    document.getElementById('dealType').value = 'select';
 }
 
-// Function to update the investor list
+// Update the investors list in the UI
 function updateInvestorsList() {
     const investorsList = document.getElementById('investorsList');
-    investorsList.innerHTML = ''; // Reset content
+    investorsList.innerHTML = ''; // Clear the existing list
 
-    if (investors.length === 0) {
-        investorsList.innerHTML = '<tr><td colspan="4">No investors added yet.</td></tr>'; // Message if no investors
-        return;
-    }
-
-    investors.forEach((investor) => {
-        investor.investments.forEach((investment) => {
+    investors.forEach(investor => {
+        investor.investments.forEach(investment => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td class="name">${investor.name}</td>
-                <td class="invested-amount"><strong>${investment.amount.toFixed(2)} &nbsp;$</strong></td> 
-                <td class="deal-type"><strong>${investment.type}</strong></td> 
-                <td class="actions"> 
+                <td>${investor.name}</td>
+                <td>${investment.amount.toFixed(2)} &nbsp;$</td>
+                <td>${investment.type}</td>
+                <td>
                     <button onclick="editInvestor('${investor.name}')">Edit</button>
                     <button onclick="removeInvestor('${investor.name}')">Remove</button>
                 </td>
@@ -63,56 +64,38 @@ function updateInvestorsList() {
             investorsList.appendChild(row);
         });
     });
-
-    // Update summary after updating the list
-    updateInvestmentSummary();
 }
 
-// Function to edit an investor
+// Edit an investor
 function editInvestor(name) {
     const investor = investors.find(inv => inv.name === name);
     if (investor) {
-        // Populate the form with existing investor data
         document.getElementById('investorName').value = investor.name;
         const lastInvestment = investor.investments[investor.investments.length - 1];
         document.getElementById('investmentAmount').value = lastInvestment.amount;
         document.getElementById('dealType').value = lastInvestment.type;
 
-        // Remove the investor from the array (to be re-added)
+        // Remove investor for re-adding
         removeInvestor(name);
     }
 }
 
-// Function to remove an investor
+// Remove an investor
 function removeInvestor(name) {
-    investors = investors.filter(investor => investor.name !== name);
-    localStorage.setItem('investors', JSON.stringify(investors));
+    investors = investors.filter(inv => inv.name !== name);
     updateInvestorsList();
+    updateInvestmentSummary();
 }
 
-// Function to clear all investors
-function clearInvestors() {
-    if (confirm("Are you sure you want to clear all investors?")) {
-        investors = [];
-        localStorage.removeItem('investors'); // Clear localStorage
-        updateInvestorsList();
-    }
-}
-
-// Function to update investment summary
+// Update investment summary
 function updateInvestmentSummary() {
     const totalInvestors = investors.length;
-    const totalInvestment = investors.reduce((sum, investor) => sum + investor.investments.reduce((investmentSum, investment) => investmentSum + investment.amount, 0), 0);
+    const totalInvestment = investors.reduce((sum, investor) => 
+        sum + investor.investments.reduce((investmentSum, investment) => investmentSum + investment.amount, 0), 
+    0);
     const averageInvestment = totalInvestors ? (totalInvestment / totalInvestors).toFixed(2) : 0;
 
     document.getElementById('totalInvestors').innerText = totalInvestors;
     document.getElementById('totalInvestment').innerText = totalInvestment.toFixed(2);
     document.getElementById('averageInvestment').innerText = averageInvestment;
 }
-
-// Initialize the list on page load
-document.addEventListener('DOMContentLoaded', () => {
-    updateInvestorsList();
-    // Set font to Times New Roman for the entire document
-    document.body.style.fontFamily = "Times New Roman, serif";
-});
