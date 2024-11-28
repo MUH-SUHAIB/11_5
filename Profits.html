@@ -1,38 +1,66 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDM - Profits Calculations</title>
+    <link rel="stylesheet" href="Profits.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Investor Deal Management</h1>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="Investor.html">Investments Management</a>
+            <a href="Deals.html">Deals Management</a>
+            <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
+            <a href="Reports.html">Comprehensive Final Reports</a>
+            <a href="Support.html">Support & Feedback</a>
+        </nav>
+    </header>
 
-<html>
-      <head>
+    <div class="content">
+        <h2>Profits Calculations</h2>
 
-          <meta charset = "utf-8">
-          <title>IDM - Profits Calculations</title>
-          <link rel = "stylesheet" href = "Profits.css" >   
+        <div class="form-container">
+            <label for="cost-price">Cost Price:</label>
+            <input type="number" id="cost-price" placeholder="Enter Cost Price">
+            
+            <label for="sale-price">Sale Price:</label>
+            <input type="number" id="sale-price" placeholder="Enter Sale Price">
+            
+            <label for="additional-costs">Additional Costs:</label>
+            <input type="number" id="additional-costs" placeholder="Enter Additional Costs">
 
-      </head>
-       
-      <body>
-               
-          <header>
-                <div class="header-container">
-                    <h1>Investor Deal Management</h1>
-                </div>
-              <nav>
-                <a href="index.html">Home</a>
-                <a href="Investor.html">Investments Management</a>
-                <a href="Deals.html">Deals Management</a>
-                <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
-                <a href="Reports.html">Comprehensive Final Reports</a>
-                 <a href="Support.html">Support & Feedback</a>
-              </nav>
-           </header>
-           <h1>Profits Calculations page<h1>
+            <button onclick="calculateProfit()">Calculate Profit</button>
+        </div>
 
+        <div id="results" class="results">
+            <!-- Results will be displayed here -->
+        </div>
 
+        <h3>Investor Profit Distribution</h3>
 
+        <label for="investment-amount">Investor's Investment Amount:</label>
+        <input type="number" id="investment-amount" placeholder="Enter Investment Amount">
 
+        <button onclick="calculateInvestorProfit()">Calculate Investor Profit</button>
 
-           <footer>
-            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-        </footer>      
-      </body>
+        <div id="investor-profit-results">
+            <!-- Investor profit details will be displayed here -->
+        </div>
 
+        <div id="graph-container">
+            <!-- Placeholder for future chart/graph -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+    </footer>
+
+    <script src="Profits.js"></script>
+</body>
 </html>
