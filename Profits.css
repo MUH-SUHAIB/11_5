@@ -5,15 +5,13 @@
 }
 
 body {
-    font-family: 'Times New Roman', sans-serif;
-    background: url('https://github.com/MUH-SUHAIB/11_5/blob/e145189c3fa4f256fb971ecdf5b5f2822959480a/Logo1.jpg') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    background: #f4f4f9;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
 }
 
-/* Header and Footer Styles */
 header, footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
@@ -50,4 +48,74 @@ nav a {
 nav a:hover {
     background-color: #3b5762;
     transform: translateY(-2px);
+}
+
+.content {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+.results, #investor-profit-results {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#graph-container {
+    margin-top: 30px;
+    text-align: center;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #2c3e50;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
 }
