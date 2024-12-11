@@ -13,7 +13,6 @@ body {
     min-height: 100vh;
 }
 
-/* Header and Footer Styles */
 header, footer {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
