@@ -1,32 +1,45 @@
 // Deals.js
 
-var deals = []; // Initialize an empty array for deals
+// Array to store deals
+let deals = [];
 
 // Add a new deal
 function addDeal() {
-    var name = document.getElementById('dealName').value;
-    var client = document.getElementById('clientName').value;
-    var investors = document.getElementById('investorNames').value;
-    var type = document.getElementById('dealType').value;
-    var status = document.getElementById('dealStatus').value;
-    var amount = parseFloat(document.getElementById('investedAmount').value);
+    // Get input values
+    const dealName = document.getElementById('dealName').value;
+    const clientName = document.getElementById('clientName').value;
+    const investorNames = document.getElementById('investorNames').value;
+    const dealType = document.getElementById('dealType').value;
+    const dealStatus = document.getElementById('dealStatus').value;
+    const investedAmount = parseFloat(document.getElementById('investedAmount').value);
 
-    // Validate inputs
-    if (!name || !client || !investors || type === "select" || status === "select" || isNaN(amount)) {
+    // Validate input
+    if (!dealName || !clientName || !investorNames || dealType === "select" || dealStatus === "select" || isNaN(investedAmount)) {
         alert('Please fill out all fields correctly.');
         return;
     }
 
-    // Add new deal to the array
-    var newDeal = { name, client, investors, type, status, amount };
+    // Create new deal object
+    const newDeal = {
+        dealName,
+        clientName,
+        investorNames,
+        dealType,
+        dealStatus,
+        investedAmount
+    };
+
+    // Add the deal to the array
     deals.push(newDeal);
 
-    // Clear form and update UI
+    // Clear the form
     clearForm();
+
+    // Update the table
     updateDealsTable();
 }
 
-// Clear form inputs
+// Clear form fields
 function clearForm() {
     document.getElementById('dealName').value = '';
     document.getElementById('clientName').value = '';
@@ -36,54 +49,50 @@ function clearForm() {
     document.getElementById('investedAmount').value = '';
 }
 
-// Update the deals table in the UI
+// Update the deals table
 function updateDealsTable() {
-    var tableBody = document.getElementById('dealsTableBody');
-    tableBody.innerHTML = ''; // Clear existing rows
+    const tableBody = document.getElementById('dealsTableBody');
+    tableBody.innerHTML = '';
 
     deals.forEach((deal, index) => {
-        var row = '<tr>' +
-                  '<td>' + deal.name + '</td>' +
-                  '<td>' + deal.client + '</td>' +
-                  '<td>' + deal.investors + '</td>' +
-                  '<td>' + deal.type + '</td>' +
-                  '<td>' + deal.status + '</td>' +
-                  '<td>' + deal.amount.toFixed(2) + '</td>' +
-                  '<td>' +
-                      '<button onclick="editDeal(' + index + ')">Edit</button>' +
-                      '<button onclick="removeDeal(' + index + ')">Remove</button>' +
-                  '</td>' +
-                  '</tr>';
+        const row = `
+            <tr>
+                <td>${deal.dealName}</td>
+                <td>${deal.clientName}</td>
+                <td>${deal.investorNames}</td>
+                <td>${deal.dealType}</td>
+                <td>${deal.dealStatus}</td>
+                <td>$${deal.investedAmount.toFixed(2)}</td>
+                <td>
+                    <button onclick="editDeal(${index})">Edit</button>
+                    <button onclick="removeDeal(${index})">Remove</button>
+                </td>
+            </tr>
+        `;
         tableBody.innerHTML += row;
     });
 }
 
 // Edit a deal
 function editDeal(index) {
-    var deal = deals[index];
-    document.getElementById('dealName').value = deal.name;
-    document.getElementById('clientName').value = deal.client;
-    document.getElementById('investorNames').value = deal.investors;
-    document.getElementById('dealType').value = deal.type;
-    document.getElementById('dealStatus').value = deal.status;
-    document.getElementById('investedAmount').value = deal.amount;
+    const deal = deals[index];
 
-    removeDeal(index); // Remove the deal for re-adding
+    document.getElementById('dealName').value = deal.dealName;
+    document.getElementById('clientName').value = deal.clientName;
+    document.getElementById('investorNames').value = deal.investorNames;
+    document.getElementById('dealType').value = deal.dealType;
+    document.getElementById('dealStatus').value = deal.dealStatus;
+    document.getElementById('investedAmount').value = deal.investedAmount;
+
+    // Remove the deal for re-adding
+    removeDeal(index);
 }
 
 // Remove a deal
 function removeDeal(index) {
-    deals.splice(index, 1); // Remove the deal from the array
+    deals.splice(index, 1);
     updateDealsTable();
 }
 
-// Search for deals
-function searchDeals() {
-    var searchQuery = document.getElementById('dealSearch').value.toLowerCase();
-    var tableBody = document.getElementById('dealsTableBody');
-    tableBody.innerHTML = ''; // Clear existing rows
-
-    deals.filter(deal => 
-        deal.name.toLowerCase().includes(searchQuery) ||
-        deal.client.toLowerCase().includes(searchQuery) ||
-        deal.investors.toLowerCase()
+// Attach event listener to the Add Deal button
+document.getElementById('addDealButton').addEventListener('click', addDeal);
