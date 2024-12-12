@@ -8,7 +8,8 @@
 
 body {
     font-family: 'Times New Roman', sans-serif;
-    background: #f4f4f9;
+    background: url('Logo1.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
