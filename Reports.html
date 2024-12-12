@@ -1,105 +1,100 @@
 <html>
-      <head>
-          <meta charset = "utf-8">
-          <title>IDM - Reports</title>
-          <link rel = "stylesheet" href = "Reports.css" > 
-          </head>
-       
-      <body>
-          <header>
-                <div class="header-container">
-                    <h1>Investor Deal Management</h1>
-                </div>
-              <nav>
-                <a href="index.html">Home</a>
-                <a href="Investor.html">Investments Management</a>
-                <a href="Deals.html">Deals Management</a>
-                <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
-                <a href="Reports.html">Comprehensive Final Reports</a>
-                 <a href="Support.html">Support & Feedback</a>
-              </nav>
-           </header>
-                 <main class="container">
-      <h1>Reports Page</h1>
-      <section class="summary">
-        <h2>Summary Metrics</h2>
-        <div class="metrics">
-          <div class="metric">
-            <h3>Total Investors</h3>
-            <p id="total-investors">50</p>
+  <head>
+      <meta charset="utf-8">
+      <title>IDM - Reports</title>
+      <link rel="stylesheet" href="Reports.css">
+  </head>
+
+  <body>
+      <header>
+          <div class="header-container">
+              <h1>Investor Deal Management</h1>
           </div>
-          <div class="metric">
-            <h3>Total Deals</h3>
-            <p id="total-deals">120</p>
-          </div>
-          <div class="metric">
-            <h3>Total Revenue</h3>
-            <p id="total-revenue">$1,200,000</p>
-          </div>
-          <div class="metric">
-            <h3>Total Profit for Each Investor</h3>
-            <p id="profit-per-investor">$24,000</p>
-          </div>
-          <div class="metric">
-            <h3>Total Profit of Dealer</h3>
-            <p id="dealer-profit">$300,000</p>
-          </div>
-          <div class="metric">
-            <h3>Deals Closed This Month</h3>
-            <p id="monthly-deals">15</p>
-          </div>
+      </header>
+
+      <main class="container">
+          <h1>Reports Page</h1>
+
+          <section class="summary">
+              <h2>Summary Metrics</h2>
+              <div class="metrics">
+                  <div class="metric">
+                      <h3>Total Investors</h3>
+                      <p id="total-investors">50</p>
+                  </div>
+                  <div class="metric">
+                      <h3>Total Deals</h3>
+                      <p id="total-deals">120</p>
+                  </div>
+                  <div class="metric">
+                      <h3>Total Revenue</h3>
+                      <p id="total-revenue">$1,200,000</p>
+                  </div>
+                  <div class="metric">
+                      <h3>Total Profit for Each Investor</h3>
+                      <p id="profit-per-investor">$24,000</p>
+                  </div>
+                  <div class="metric">
+                      <h3>Total Profit of Dealer</h3>
+                      <p id="dealer-profit">$300,000</p>
+                  </div>
+                  <div class="metric">
+                      <h3>Deals Closed This Month</h3>
+                      <p id="monthly-deals">15</p>
+                  </div>
+              </div>
           </section>
-        </div>
-                 <section class="breakdown">
-        <h2>Deal Breakdown</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Category</th>
-              <th>Product</th>
-              <th>Status</th>
-              <th>Profit</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Real Estate</td>
-              <td>Commercial Property</td>
-              <td>Completed</td>
-              <td>$50,000</td>
-            </tr>
-            <tr>
-              <td>Automotive</td>
-              <td>Luxury Car</td>
-              <td>Pending</td>
-              <td>$20,000</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
 
- <section class="filters">
-        <h2>Filter and Export</h2>
-        <label for="date-range">Date Range:</label>
-        <select id="date-range">
-          <option value="daily">Daily</option>
-          <option value="weekly">Weekly</option>
-          <option value="monthly">Monthly</option>
-        </select>
-        <button id="download-report">Download Report</button>
-      </section>
+          <section class="breakdown">
+              <h2>Deal Breakdown</h2>
+              <table>
+                  <thead>
+                      <tr>
+                          <th>Category</th>
+                          <th>Product</th>
+                          <th>Status</th>
+                          <th>Profit</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>Real Estate</td>
+                          <td>Commercial Property</td>
+                          <td>Completed</td>
+                          <td>$50,000</td>
+                      </tr>
+                      <tr>
+                          <td>Automotive</td>
+                          <td>Luxury Car</td>
+                          <td>Pending</td>
+                          <td>$20,000</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </section>
 
-                      <section class="visualization">
-        <h2>Graphical Visualization</h2>
-        <div class="charts">
-          <canvas id="profit-chart"></canvas>
-          <canvas id="deals-chart"></canvas>
-          </div>
-      </section>
-    </main>
-     <footer>
-            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-        </footer>
-                 
-      </body>
-      </html>
+          <section class="filters">
+              <h2>Filter and Export</h2>
+              <label for="date-range">Date Range:</label>
+              <select id="date-range">
+                  <option value="daily">Daily</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="monthly">Monthly</option>
+              </select>
+              <button id="download-report">Download Report</button>
+          </section>
+
+          <section class="visualization">
+              <h2>Graphical Visualization</h2>
+              <div class="charts">
+                  <canvas id="profit-chart"></canvas>
+                  <canvas id="deals-chart"></canvas>
+              </div>
+          </section>
+      </main>
+
+      <footer>
+          <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+      </footer>
+  </body>
+</html>
