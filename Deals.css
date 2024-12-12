@@ -1,3 +1,5 @@
+/* Updated CSS for Deals Management */
+
 * {
     margin: 0;
     padding: 0;
@@ -5,98 +7,110 @@
 }
 
 body {
-    font-family: 'Times New Roman', sans-serif;
-    background: url('https://github.com/MUH-SUHAIB/11_5/blob/e145189c3fa4f256fb971ecdf5b5f2822959480a/Logo1.jpg') no-repeat center center fixed;
-    background-size: cover;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
 }
 
-
 header, footer {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+    background: #2c3e50;
     color: white;
     padding: 20px 0;
+    text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative;
-    border-bottom: 1px solid white;
-}
-
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 0 auto;
 }
 
 nav {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 20px;
+    gap: 15px;
+    margin-top: 10px;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 8px 15px;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 nav a:hover {
     background-color: #3b5762;
-    transform: translateY(-2px);
 }
 
-/* Deal List and Actions */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+
 .deal-actions {
     display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-    padding: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.add-deal-btn {
+.deal-actions input, .deal-actions select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.deal-actions button {
     padding: 10px 20px;
     background-color: #2c3e50;
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.add-deal-btn:hover {
+.deal-actions button:hover {
     background-color: #34495e;
 }
 
-#deal-search {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.deal-list {
+    margin: 20px auto;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
 }
 
-.filters select {
+.deal-list input {
+    width: 100%;
     padding: 10px;
-    border-radius: 5px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
 }
-
 
 .deal-list table {
     width: 100%;
-    margin-top: 20px;
     border-collapse: collapse;
 }
 
 .deal-list th, .deal-list td {
     padding: 12px;
-    border: 1px solid #ccc;
+    border: 1px solid #ddd;
     text-align: left;
+    font-size: 1rem;
 }
 
 .deal-list th {
@@ -114,5 +128,9 @@ nav a:hover {
 
 footer {
     text-align: center;
-    padding: 20px 0;
+    padding: 20px;
+    font-size: 0.9rem;
+    background-color: #2c3e50;
+    color: white;
+    border-top: 1px solid white;
 }
