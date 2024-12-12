@@ -137,16 +137,3 @@ nav a:hover {
         max-width: 500px;
         height: 300px;
       }
-
-    footer {
-    text-align: center; /* Centers the content horizontally */
-    padding: 20px;
-    font-size: 0.9rem;
-    background: linear-gradient(135deg, #2c3e50, #34495e);
-    color: white;
-    border-top: 1px solid white;
-    width: 100%; /* Ensures the footer takes up the entire width */
-    position: relative; /* Makes sure it's properly positioned */
-    bottom: 0; /* Sticks to the bottom if needed */
-    left: 0;
-}
