@@ -3,9 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investor Deal Management - Reports</title>
+    <title>IDM - Profits Calculations</title>
     <link rel="stylesheet" href="Profits.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -22,160 +21,143 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h2>Investor Deal Reports</h2>
+<html>
+      <head>
+          <meta charset = "utf-8">
+          <title>IDM - Reports</title>
+          <link rel = "stylesheet" href = "Reports.css" >   
+    <div class="content">
+        <h2>Profits Calculations</h2>
 
-        <!-- Summary Metrics Section -->
-        <div class="summary">
-            <h3>Summary of Key Metrics</h3>
-            <div class="metrics">
-                <div class="metric">
-                    <h3>Total Investors</h3>
-                    <p>250</p>
+      </head>
+       
+      <body>
+          <header>
+                <div class="header-container">
+                    <h1>Investor Deal Management</h1>
                 </div>
-                <div class="metric">
-                    <h3>Total Deals</h3>
-                    <p>200</p>
-                </div>
-                <div class="metric">
-                    <h3>Total Revenue</h3>
-                    <p>$500,000</p>
-                </div>
-                <div class="metric">
-                    <h3>Total Profit</h3>
-                    <p>$150,000</p>
-                </div>
-                <div class="metric">
-                    <h3>Deals Closed This Month</h3>
-                    <p>30</p>
-                </div>
-            </div>
+              <nav>
+                <a href="index.html">Home</a>
+                <a href="Investor.html">Investments Management</a>
+                <a href="Deals.html">Deals Management</a>
+                <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
+                <a href="Reports.html">Comprehensive Final Reports</a>
+                 <a href="Support.html">Support & Feedback</a>
+              </nav>
+           </header>
+        <div class="form-container">
+            <label for="cost-price">Cost Price:</label>
+            <input type="number" id="cost-price" placeholder="Enter Cost Price">
+            
+            <label for="sale-price">Sale Price:</label>
+            <input type="number" id="sale-price" placeholder="Enter Sale Price">
+            
+            <label for="additional-costs">Additional Costs:</label>
+            <input type="number" id="additional-costs" placeholder="Enter Additional Costs">
+
+                  <main class="container">
+      <h1>Reports Page</h1>
+            <button onclick="calculateProfit()">Calculate Profit</button>
         </div>
 
-        <!-- Deal Breakdown Section -->
-        <div class="breakdown">
-            <h3>Deal Breakdown</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Deal Category</th>
-                        <th>Pending</th>
-                        <th>Completed</th>
-                        <th>Cancelled</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Deal Status</td>
-                        <td>10</td>
-                        <td>30</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>By Product</td>
-                        <td>12</td>
-                        <td>35</td>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>By Region</td>
-                        <td>8</td>
-                        <td>25</td>
-                        <td>2</td>
-                    </tr>
-                </tbody>
-            </table>
+      <section class="summary">
+        <h2>Summary Metrics</h2>
+        <div class="metrics">
+          <div class="metric">
+            <h3>Total Investors</h3>
+            <p id="total-investors">50</p>
+          </div>
+          <div class="metric">
+            <h3>Total Deals</h3>
+            <p id="total-deals">120</p>
+          </div>
+          <div class="metric">
+            <h3>Total Revenue</h3>
+            <p id="total-revenue">$1,200,000</p>
+          </div>
+          <div class="metric">
+            <h3>Total Profit for Each Investor</h3>
+            <p id="profit-per-investor">$24,000</p>
+          </div>
+          <div class="metric">
+            <h3>Total Profit of Dealer</h3>
+            <p id="dealer-profit">$300,000</p>
+          </div>
+          <div class="metric">
+            <h3>Deals Closed This Month</h3>
+            <p id="monthly-deals">15</p>
+          </div>
+        <div id="results" class="results">
+        </div>
+      </section>
+
+      <section class="breakdown">
+        <h2>Deal Breakdown</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Product</th>
+              <th>Status</th>
+              <th>Profit</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Real Estate</td>
+              <td>Commercial Property</td>
+              <td>Completed</td>
+              <td>$50,000</td>
+            </tr>
+            <tr>
+              <td>Automotive</td>
+              <td>Luxury Car</td>
+              <td>Pending</td>
+              <td>$20,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+        <h3>Investor Profit Distribution</h3>
+
+      <section class="filters">
+        <h2>Filter and Export</h2>
+        <label for="date-range">Date Range:</label>
+        <select id="date-range">
+          <option value="daily">Daily</option>
+          <option value="weekly">Weekly</option>
+          <option value="monthly">Monthly</option>
+        </select>
+        <button id="download-report">Download Report</button>
+      </section>
+        <label for="investment-amount">Investor's Investment Amount:</label>
+        <input type="number" id="investment-amount" placeholder="Enter Investment Amount">
+        <label for="total-investment">Total Investment (All Investors):</label>
+        <input type="number" id="total-investment" placeholder="Enter Total Investment">
+        <button onclick="calculateInvestorProfit()">Calculate Investor Profit</button>
+        <div id="investor-profit-results">
         </div>
 
-        <!-- Time Period Filter Section -->
-        <div class="filters">
-            <label for="time-period">Select Time Period:</label>
-            <select id="time-period">
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly" selected>Monthly</option>
-            </select>
-            <button onclick="filterData()">Apply Filter</button>
+      <section class="visualization">
+        <h2>Graphical Visualization</h2>
+        <div class="charts">
+          <canvas id="profit-chart"></canvas>
+          <canvas id="deals-chart"></canvas>
+        <div id="graph-container">
         </div>
-
-        <!-- Visualization Section -->
-        <div class="visualization">
-            <h3>Performance Visualization</h3>
-            <div class="charts">
-                <div class="chart-container">
-                    <canvas id="profit-chart"></canvas>
-                </div>
-                <div class="chart-container">
-                    <canvas id="deals-chart"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <!-- Download Report Section -->
-        <div class="download-section">
-            <h3>Download Reports</h3>
-            <button onclick="downloadReport('csv')">Download CSV</button>
-            <button onclick="downloadReport('excel')">Download Excel</button>
-            <button onclick="downloadReport('pdf')">Download PDF</button>
-        </div>
+      </section>
+    </main>
     </div>
 
+        <footer>
+            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+        </footer>
+                 
+      </body>
     <footer>
         <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
     </footer>
 
-    <script>
-      const profitCtx = document.getElementById("profit-chart").getContext("2d");
-      const profitChart = new Chart(profitCtx, {
-        type: "line",
-        data: {
-          labels: ["January", "February", "March", "April", "May"],
-          datasets: [
-            {
-              label: "Profit Over Time",
-              data: [30000, 40000, 35000, 50000, 45000],
-              borderColor: "rgba(75, 192, 192, 1)",
-              fill: false,
-            },
-          ],
-        },
-      });
-
-      const dealsCtx = document.getElementById("deals-chart").getContext("2d");
-      const dealsChart = new Chart(dealsCtx, {
-        type: "bar",
-        data: {
-          labels: ["Pending", "Completed", "Cancelled"],
-          datasets: [
-            {
-              label: "Number of Deals",
-              data: [10, 30, 5],
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-              ],
-              borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        },
-      });
-
-      function filterData() {
-        const period = document.getElementById("time-period").value;
-        console.log("Filtering data by:", period);
-        // Apply filtering logic here
-      }
-
-      function downloadReport(format) {
-        console.log("Downloading report as:", format);
-        // Implement report download logic (CSV, Excel, PDF)
-      }
-    </script>
+    <script src="Profits.js"></script>
 </body>
 </html>
