@@ -1,35 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDM - Profits Calculations</title>
-    <link rel="stylesheet" href="Profits.css">
-</head>
-<body>
-    <header>
-        <div class="header-container">
-            <h1>Investor Deal Management</h1>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="Investor.html">Investments Management</a>
-            <a href="Deals.html">Deals Management</a>
-            <a href="Profits.html">Deals Outcomes: Profits & Losses</a>
-            <a href="Reports.html">Comprehensive Final Reports</a>
-            <a href="Support.html">Support & Feedback</a>
-        </nav>
-    </header>
-
 <html>
       <head>
           <meta charset = "utf-8">
           <title>IDM - Reports</title>
-          <link rel = "stylesheet" href = "Reports.css" >   
-    <div class="content">
-        <h2>Profits Calculations</h2>
-
-      </head>
+          <link rel = "stylesheet" href = "Reports.css" > 
+          </head>
        
       <body>
           <header>
@@ -45,21 +19,8 @@
                  <a href="Support.html">Support & Feedback</a>
               </nav>
            </header>
-        <div class="form-container">
-            <label for="cost-price">Cost Price:</label>
-            <input type="number" id="cost-price" placeholder="Enter Cost Price">
-            
-            <label for="sale-price">Sale Price:</label>
-            <input type="number" id="sale-price" placeholder="Enter Sale Price">
-            
-            <label for="additional-costs">Additional Costs:</label>
-            <input type="number" id="additional-costs" placeholder="Enter Additional Costs">
-
-                  <main class="container">
+                 <main class="container">
       <h1>Reports Page</h1>
-            <button onclick="calculateProfit()">Calculate Profit</button>
-        </div>
-
       <section class="summary">
         <h2>Summary Metrics</h2>
         <div class="metrics">
@@ -87,11 +48,9 @@
             <h3>Deals Closed This Month</h3>
             <p id="monthly-deals">15</p>
           </div>
-        <div id="results" class="results">
+          </section>
         </div>
-      </section>
-
-      <section class="breakdown">
+                 <section class="breakdown">
         <h2>Deal Breakdown</h2>
         <table>
           <thead>
@@ -118,9 +77,8 @@
           </tbody>
         </table>
       </section>
-        <h3>Investor Profit Distribution</h3>
 
-      <section class="filters">
+ <section class="filters">
         <h2>Filter and Export</h2>
         <label for="date-range">Date Range:</label>
         <select id="date-range">
@@ -130,34 +88,18 @@
         </select>
         <button id="download-report">Download Report</button>
       </section>
-        <label for="investment-amount">Investor's Investment Amount:</label>
-        <input type="number" id="investment-amount" placeholder="Enter Investment Amount">
-        <label for="total-investment">Total Investment (All Investors):</label>
-        <input type="number" id="total-investment" placeholder="Enter Total Investment">
-        <button onclick="calculateInvestorProfit()">Calculate Investor Profit</button>
-        <div id="investor-profit-results">
-        </div>
 
-      <section class="visualization">
+                      <section class="visualization">
         <h2>Graphical Visualization</h2>
         <div class="charts">
           <canvas id="profit-chart"></canvas>
           <canvas id="deals-chart"></canvas>
-        <div id="graph-container">
-        </div>
+          </div>
       </section>
     </main>
-    </div>
-
-        <footer>
+     <footer>
             <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
         </footer>
                  
       </body>
-    <footer>
-        <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-    </footer>
-
-    <script src="Profits.js"></script>
-</body>
-</html>
+      </html>
