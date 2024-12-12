@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDM - Deals</title>
+    <title>Deals Management</title>
     <link rel="stylesheet" href="Deals.css">
 </head>
 <body>
@@ -24,20 +24,27 @@
     <h1>Deals Management</h1>
 
     <section class="deal-actions">
-        <button class="add-deal-btn">Add New Deal</button>
-        <input type="text" id="deal-search" placeholder="Search Deals...">
-        <div class="filters">
-            <select id="deal-status">
-                <option value="">Filter by Status</option>
-                <option value="Pending">Pending</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Closed">Closed</option>
-                <option value="On Hold">On Hold</option>
-            </select>
-        </div>
+        <input type="text" id="dealName" placeholder="Deal Name">
+        <input type="text" id="clientName" placeholder="Client Name">
+        <input type="text" id="investorNames" placeholder="Investor Names">
+        <select id="dealType">
+            <option value="select">Select Deal Type</option>
+            <option value="Equity">Equity</option>
+            <option value="Debt">Debt</option>
+        </select>
+        <select id="dealStatus">
+            <option value="select">Select Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Closed">Closed</option>
+            <option value="On Hold">On Hold</option>
+        </select>
+        <input type="number" id="investedAmount" placeholder="Total Invested Amount">
+        <button id="addDealButton">Add New Deal</button>
     </section>
 
     <section class="deal-list">
+        <input type="text" id="dealSearch" placeholder="Search Deals...">
         <table>
             <thead>
                 <tr>
@@ -50,8 +57,8 @@
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
-              
+            <tbody id="dealsTableBody">
+                <!-- Dynamic rows will appear here -->
             </tbody>
         </table>
     </section>
