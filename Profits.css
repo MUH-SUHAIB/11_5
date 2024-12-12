@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
 }
 
-header, footer {
+header{
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     padding: 20px 0;
@@ -108,12 +108,13 @@ button:hover {
 
 footer {
     text-align: center;
-    padding: 10px;
+    padding: 20px;
+    font-size: 0.9rem;
     background: #2c3e50;
     color: white;
-    position: fixed;
     width: 100%;
-    bottom: 0;
+    position: relative;
+    border-top: 1px solid white;
 }
 
 footer p {
