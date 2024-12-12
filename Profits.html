@@ -20,10 +20,8 @@
             <a href="Support.html">Support & Feedback</a>
         </nav>
     </header>
-
-    <div class="content">
+     <div class="content">
         <h2>Profits Calculations</h2>
-
         <div class="form-container">
             <label for="cost-price">Cost Price:</label>
             <input type="number" id="cost-price" placeholder="Enter Cost Price">
@@ -33,18 +31,28 @@
             
             <label for="additional-costs">Additional Costs:</label>
             <input type="number" id="additional-costs" placeholder="Enter Additional Costs">
-
             <button onclick="calculateProfit()">Calculate Profit</button>
         </div>
-
         <div id="results" class="results">
+            <!-- Results will be displayed here -->
+        </div>
+        <h3>Investor Profit Distribution</h3>
+
+        <label for="investment-amount">Investor's Investment Amount:</label>
+        <input type="number" id="investment-amount" placeholder="Enter Investment Amount">
+
+        <button onclick="calculateInvestorProfit()">Calculate Investor Profit</button>
+        <div id="investor-profit-results">
+            <!-- Investor profit details will be displayed here -->
+        </div>
+
+        <div id="graph-container">
+            <!-- Placeholder for future chart/graph -->
         </div>
     </div>
-    
     <footer>
         <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
     </footer>
-
     <script src="Profits.js"></script>
 </body>
 </html>
