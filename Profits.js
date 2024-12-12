@@ -13,11 +13,14 @@ function calculateProfit() {
     const netProfit = profit - dealerProfit;
 
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = 
+    resultsDiv.innerHTML = `
         <p><strong>Total Profit:</strong> $${profit.toFixed(2)}</p>
         <p><strong>Dealer's Profit (10%):</strong> $${dealerProfit.toFixed(2)}</p>
-        <p><strong>Net Profit:</strong> $${netProfit.toFixed(2)}</p>;
-    function calculateInvestorProfit() {
+        <p><strong>Net Profit:</strong> $${netProfit.toFixed(2)}</p>
+    `;
+}
+
+function calculateInvestorProfit() {
     const investmentAmount = parseFloat(document.getElementById('investment-amount').value);
     const totalProfit = parseFloat(document.getElementById('results').querySelector('p strong').nextSibling.textContent.replace('$', ''));
 
@@ -28,9 +31,7 @@ function calculateProfit() {
     }
     const investorProfit = (investmentAmount / totalInvestment) * totalProfit;
     const investorResultsDiv = document.getElementById('investor-profit-results');
-    investorResultsDiv.innerHTML = 
-        <p><strong>Investor's Profit:</strong> $${investorProfit.toFixed(2)}</p>;
+    investorResultsDiv.innerHTML = `
+        <p><strong>Investor's Profit:</strong> $${investorProfit.toFixed(2)}</p>
+    `;
 }
-}
-
-
