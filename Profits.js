@@ -24,12 +24,14 @@ function calculateInvestorProfit() {
     const investmentAmount = parseFloat(document.getElementById('investment-amount').value);
     const totalProfit = parseFloat(document.getElementById('results').querySelector('p strong').nextSibling.textContent.replace('$', ''));
 
-    if (isNaN(investmentAmount) || isNaN(totalProfit)) {
+    const totalInvestment = parseFloat(document.getElementById('total-investment').value);
+
+    if (isNaN(investmentAmount) || isNaN(totalProfit) || isNaN(totalInvestment)) {
         alert('Please enter valid numeric values.');
         return;
     }
 
-    const investorProfit = (investmentAmount / totalProfit) * totalProfit;
+    const investorProfit = (investmentAmount / totalInvestment) * totalProfit;
 
     const investorResultsDiv = document.getElementById('investor-profit-results');
     investorResultsDiv.innerHTML = `
