@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IDM - Profits Calculations</title>
+    <title>Investor Deal Management - Reports</title>
     <link rel="stylesheet" href="Profits.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -21,42 +22,89 @@
         </nav>
     </header>
 
-    <div class="content">
-        <h2>Profits Calculations</h2>
-
-        <div class="form-container">
-            <label for="cost-price">Cost Price:</label>
-            <input type="number" id="cost-price" placeholder="Enter Cost Price">
-            
-            <label for="sale-price">Sale Price:</label>
-            <input type="number" id="sale-price" placeholder="Enter Sale Price">
-            
-            <label for="additional-costs">Additional Costs:</label>
-            <input type="number" id="additional-costs" placeholder="Enter Additional Costs">
-
-            <button onclick="calculateProfit()">Calculate Profit</button>
+    <div class="container">
+        <h2>Investor Deal Reports</h2>
+        
+        <div class="summary">
+            <h3>Summary of Key Metrics</h3>
+            <div class="metrics">
+                <div class="metric">
+                    <h3>Total Profit</h3>
+                    <p>$150,000</p>
+                </div>
+                <div class="metric">
+                    <h3>Completed Deals</h3>
+                    <p>35</p>
+                </div>
+                <div class="metric">
+                    <h3>Pending Deals</h3>
+                    <p>10</p>
+                </div>
+                <div class="metric">
+                    <h3>Cancelled Deals</h3>
+                    <p>5</p>
+                </div>
+            </div>
         </div>
 
-        <div id="results" class="results">
+        <div class="visualization">
+            <h3>Charts</h3>
+            <div class="charts">
+                <div class="chart-container">
+                    <canvas id="profit-chart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="deals-chart"></canvas>
+                </div>
+            </div>
         </div>
 
-        <h3>Investor Profit Distribution</h3>
-
-        <label for="investment-amount">Investor's Investment Amount:</label>
-        <input type="number" id="investment-amount" placeholder="Enter Investment Amount">
-        <label for="total-investment">Total Investment (All Investors):</label>
-        <input type="number" id="total-investment" placeholder="Enter Total Investment">
-        <button onclick="calculateInvestorProfit()">Calculate Investor Profit</button>
-
-        <div id="investor-profit-results">
-        </div>
-
+        <footer>
+            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-    </footer>
+    <script>
+      const profitCtx = document.getElementById("profit-chart").getContext("2d");
+      const profitChart = new Chart(profitCtx, {
+        type: "line",
+        data: {
+          labels: ["January", "February", "March", "April", "May"],
+          datasets: [
+            {
+              label: "Profit Over Time",
+              data: [30000, 40000, 35000, 50000, 45000],
+              borderColor: "rgba(75, 192, 192, 1)",
+              fill: false,
+            },
+          ],
+        },
+      });
 
-    <script src="Profits.js"></script>
+      const dealsCtx = document.getElementById("deals-chart").getContext("2d");
+      const dealsChart = new Chart(dealsCtx, {
+        type: "bar",
+        data: {
+          labels: ["Pending", "Completed", "Cancelled"],
+          datasets: [
+            {
+              label: "Number of Deals",
+              data: [10, 30, 5],
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+      });
+    </script>
 </body>
 </html>
