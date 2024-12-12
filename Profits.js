@@ -22,7 +22,12 @@ function calculateProfit() {
 
 function calculateInvestorProfit() {
     const investmentAmount = parseFloat(document.getElementById('investment-amount').value);
-    const totalProfit = parseFloat(document.getElementById('results').querySelector('p strong').nextSibling.textContent.replace('$', ''));
+    const totalProfitElement = document.getElementById('results').querySelector('p strong');
+    if (!totalProfitElement) {
+        alert('Please calculate profit first.');
+        return;
+    }
+    const totalProfit = parseFloat(totalProfitElement.nextElementSibling.textContent.replace('$', '').trim());
 
     const totalInvestment = parseFloat(document.getElementById('total-investment').value);
 
