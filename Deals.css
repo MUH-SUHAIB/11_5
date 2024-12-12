@@ -14,8 +14,8 @@ body {
     min-height: 100vh;
 }
 
-/* Header and Footer Styles */
-header, footer {
+
+header{
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
     padding: 20px 0;
@@ -170,4 +170,14 @@ h1 {
     background-color: #f1f1f1;
 }
 
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    background: #2c3e50;
+    color: white;
+    width: 100%;
+    position: relative;
+    border-top: 1px solid white;
+}
 
