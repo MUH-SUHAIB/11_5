@@ -24,31 +24,83 @@
 
     <div class="container">
         <h2>Investor Deal Reports</h2>
-        
+
+        <!-- Summary Metrics Section -->
         <div class="summary">
             <h3>Summary of Key Metrics</h3>
             <div class="metrics">
+                <div class="metric">
+                    <h3>Total Investors</h3>
+                    <p>250</p>
+                </div>
+                <div class="metric">
+                    <h3>Total Deals</h3>
+                    <p>200</p>
+                </div>
+                <div class="metric">
+                    <h3>Total Revenue</h3>
+                    <p>$500,000</p>
+                </div>
                 <div class="metric">
                     <h3>Total Profit</h3>
                     <p>$150,000</p>
                 </div>
                 <div class="metric">
-                    <h3>Completed Deals</h3>
-                    <p>35</p>
-                </div>
-                <div class="metric">
-                    <h3>Pending Deals</h3>
-                    <p>10</p>
-                </div>
-                <div class="metric">
-                    <h3>Cancelled Deals</h3>
-                    <p>5</p>
+                    <h3>Deals Closed This Month</h3>
+                    <p>30</p>
                 </div>
             </div>
         </div>
 
+        <!-- Deal Breakdown Section -->
+        <div class="breakdown">
+            <h3>Deal Breakdown</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Deal Category</th>
+                        <th>Pending</th>
+                        <th>Completed</th>
+                        <th>Cancelled</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deal Status</td>
+                        <td>10</td>
+                        <td>30</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>By Product</td>
+                        <td>12</td>
+                        <td>35</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>By Region</td>
+                        <td>8</td>
+                        <td>25</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Time Period Filter Section -->
+        <div class="filters">
+            <label for="time-period">Select Time Period:</label>
+            <select id="time-period">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly" selected>Monthly</option>
+            </select>
+            <button onclick="filterData()">Apply Filter</button>
+        </div>
+
+        <!-- Visualization Section -->
         <div class="visualization">
-            <h3>Charts</h3>
+            <h3>Performance Visualization</h3>
             <div class="charts">
                 <div class="chart-container">
                     <canvas id="profit-chart"></canvas>
@@ -59,10 +111,18 @@
             </div>
         </div>
 
-        <footer>
-            <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
-        </footer>
+        <!-- Download Report Section -->
+        <div class="download-section">
+            <h3>Download Reports</h3>
+            <button onclick="downloadReport('csv')">Download CSV</button>
+            <button onclick="downloadReport('excel')">Download Excel</button>
+            <button onclick="downloadReport('pdf')">Download PDF</button>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Investor Deal Management | All Rights Reserved</p>
+    </footer>
 
     <script>
       const profitCtx = document.getElementById("profit-chart").getContext("2d");
@@ -105,6 +165,17 @@
           ],
         },
       });
+
+      function filterData() {
+        const period = document.getElementById("time-period").value;
+        console.log("Filtering data by:", period);
+        // Apply filtering logic here
+      }
+
+      function downloadReport(format) {
+        console.log("Downloading report as:", format);
+        // Implement report download logic (CSV, Excel, PDF)
+      }
     </script>
 </body>
 </html>
