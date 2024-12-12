@@ -22,11 +22,6 @@ header, footer {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Ensure the header container styles and center the content */
-.header-container {
-    text-align: center;
-}
-
 nav {
     display: flex;
     justify-content: center;
